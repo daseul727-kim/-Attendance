@@ -1,4 +1,4 @@
-const MAIN_TITLE = "2024 부탁왕"
+const MAIN_TITLE = "2024 지각왕"
 
 const NAV_MENU_1 = "HOME"
 const NAV_MENU_2 = "PORTFOLIO"
