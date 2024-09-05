@@ -1,4 +1,4 @@
-const MAIN_TITLE = "RNBL 9월 출석왕"
+const MAIN_TITLE = "2024 부탁왕"
 
 const NAV_MENU_1 = "HOME"
 const NAV_MENU_2 = "PORTFOLIO"
