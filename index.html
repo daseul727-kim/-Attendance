@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNBL 9월 출석왕</title>
+  <meta name="description" content="RNBL 9월 출석왕">
+
+  <meta property="og:title" content="RNBL 9월 출석왕">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <!--jquery-->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/constants.js"></script>
+
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!--animation-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body>
+<div class="selection">
+  <div class="title_wrap">
+    <p class="title_content">
+      <img class="title_img" src="./images/v2_7.png" alt="Title Image">
+      <span class="title">RNBL 9월 출석왕</span>
+    </p>
+  </div>
+
+  <div>
+    <p style="color: #FFFFFF; text-align: right; padding-right: 40px;">
+      <a href="./detail.html" class="detail">updated 09/05 09:24</a>
+
+    </p>
+  </div>
+  <div id="wrapper" class="wrapper">
+  </div>
+
+  <div class="circle_wrap">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <div id="other_selection" class="other_selection">
+  </div>
+
+
+</div>
+
+<script>
+
+  const list = {
+    "공덕준": 2,
+    "이정훈": 2,
+    "오윤근": 2,
+    "김다슬": 2
+  };
+
+  // 목록을 배열로 변환한 뒤, 숫자 부분을 기준으로 내림차순 정렬
+  const sortedList = Object.entries(list).sort((a, b) => b[1] - a[1]);
+
+  // 상위 3개와 나머지 분리
+  const topThree = sortedList.slice(0, 2);
+  const others = sortedList.slice(2);
+
+  // 상위 3개의 항목을 item_wrap으로 출력
+  topThree.forEach(([name, count]) => {
+    const itemWrap = document.createElement('div');
+    itemWrap.className = 'item_wrap';
+
+    const profileImg = document.createElement('img');
+    profileImg.className = 'profile_img';
+    profileImg.src = './images/medal.png';
+    profileImg.alt = `medal`;
+
+    const infoBox = document.createElement('div');
+    infoBox.className = 'info_box';
+
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'name';
+    nameSpan.textContent = name;
+
+    const countSpan = document.createElement('span');
+    countSpan.className = 'count';
+    countSpan.textContent = `${count}회`;
+
+    infoBox.appendChild(nameSpan);
+    infoBox.appendChild(countSpan);
+    itemWrap.appendChild(profileImg);
+    itemWrap.appendChild(infoBox);
+
+    const itemBox = document.getElementById('wrapper')
+    itemBox.appendChild(itemWrap);
+  });
+
+  const p = document.createElement('p')
+  p.className = 'other_names'
+
+  others.forEach(([name, count]) => {
+    p.textContent += `${name} ${count}회 , `
+  });
+
+  p.textContent = p.textContent.slice(0,p.textContent.length - 3)
+  document.getElementById('other_selection').appendChild(p)
+
+</script>
+
+</body>
+
+</html>

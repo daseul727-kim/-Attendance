@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  background: #9FA9D8;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+.title_wrap {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.title_content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 50px;
+  margin-left: 10px; /* 이미지와 텍스트 사이의 간격을 조절 */
+}
+
+.title_img {
+  width: 85px;
+  height: 89px;
+  object-fit: cover;
+}
+.wrapper {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column; /* 가로 정렬을 세로 정렬로 변경 */
+  align-items: center; /* 필요한 경우 세로 정렬 설정 */
+}
+
+.item_wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* 아이템 간의 간격을 조절 */
+}
+
+.profile_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.info_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 200px;
+}
+
+.name, .count {
+  font-size: 16px;
+  font-weight: 600;
+  color: #595959;
+}
+
+.circle_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin-bottom: 10px; /* 각 동그라미 사이의 간격 */
+}
+.other_selection {
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.other_names {
+  color: #FFFFFF;
+  text-align: center;
+}
+
+
+.detail {
+  text-decoration: none;
+  color: inherit;
+}
+
+.detail:visited {
+  color: inherit;
+}
+
+.detail:hover, .detail:active {
+  text-decoration: none; /* 마우스를 올리거나 클릭할 때도 밑줄 유지 */
+  color: inherit; /* 색상 변화 없음 */
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  .title_img {
+    width: 60px;
+    height: 60px;
+  }
+}
